@@ -100,7 +100,7 @@ function FormField(props) {
   const ariaDescribedBy = id && error ? `${id}-error-message` : null
   const ariaAttrs = {
     'aria-describedby': ariaDescribedBy,
-    'aria-invalid': error !== undefined ? true : undefined,
+    'aria-invalid': error ? true : undefined,
   }
   const controlProps = { ...rest, content, children, disabled, required, type, id }
 
@@ -163,8 +163,8 @@ FormField.propTypes = {
    * Extra FormField props are passed to the control component.
    * Mutually exclusive with children.
    */
-  control: customPropTypes.some([
-    PropTypes.func,
+  control: PropTypes.oneOfType([
+    PropTypes.elementType,
     PropTypes.oneOf(['button', 'input', 'select', 'textarea']),
   ]),
 

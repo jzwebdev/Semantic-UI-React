@@ -10,11 +10,6 @@ export {
   StrictConfirmProps,
 } from './dist/commonjs/addons/Confirm'
 export {
-  default as MountNode,
-  MountNodeProps,
-  StrictMountNodeProps,
-} from './dist/commonjs/addons/MountNode'
-export {
   default as Pagination,
   PaginationProps,
   StrictPaginationProps,
@@ -31,12 +26,6 @@ export {
   StrictPortalInnerProps,
 } from './dist/commonjs/addons/Portal/PortalInner'
 export { default as Radio, RadioProps, StrictRadioProps } from './dist/commonjs/addons/Radio'
-export {
-  default as Responsive,
-  ResponsiveProps,
-  ResponsiveWidthShorthand,
-  StrictResponsiveProps,
-} from './dist/commonjs/addons/Responsive'
 export { default as Select, SelectProps } from './dist/commonjs/addons/Select'
 export {
   default as TextArea,

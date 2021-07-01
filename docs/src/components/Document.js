@@ -10,7 +10,6 @@ const Document = ({ Body, children, Head, Html, siteData: { dev, versions } }) =
       <meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no' />
 
       <link rel='shortcut icon' type='image/x-icon' href='/logo.png' />
-      <link rel='stylesheet' href={`/style.css?${versions.suir}`} />
       <link
         rel='stylesheet'
         href={`https://cdn.jsdelivr.net/npm/semantic-ui@${versions.sui}/dist/semantic.min.css`}
@@ -41,17 +40,17 @@ const Document = ({ Body, children, Head, Html, siteData: { dev, versions } }) =
         }.js`}
       />
       <script
-        src={
-          dev
-            ? ` https://cdn.jsdelivr.net/npm/@hot-loader/react-dom@${versions.react}/umd/react-dom.development.js`
-            : `https://cdn.jsdelivr.net/npm/react-dom@${versions.react}/umd/react-dom.production.min.js`
-        }
+        src={`https://cdn.jsdelivr.net/npm/react-dom@${versions.react}/umd/react-dom${
+          dev ? '.development' : '.production.min'
+        }.js`}
       />
       <script
         src={`https://cdn.jsdelivr.net/npm/react-dom@${
           versions.react
         }/umd/react-dom-server.browser${dev ? '.development' : '.production.min'}.js`}
       />
+
+      <link rel='stylesheet' href={`/style.css?${versions.suir}`} />
     </Head>
     <Body>{children}</Body>
   </Html>
